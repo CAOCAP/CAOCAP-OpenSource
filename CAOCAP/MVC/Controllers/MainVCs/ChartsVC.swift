@@ -11,7 +11,6 @@ import SwiftUI
 // MARK: ChartsVC will use SwiftUI & Charts
 
 class ChartsVC: ContainerVC, Storyboarded {
-    var coordinator: MainCoordinator?
 
     override func viewDidLoad() {
         super.viewDidLoad()

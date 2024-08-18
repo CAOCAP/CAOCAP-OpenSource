@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SpriteKit
 
 class IntroVC: UIViewController {
 
@@ -13,14 +14,23 @@ class IntroVC: UIViewController {
     @IBOutlet weak var usernameTF: UITextField!
     @IBOutlet weak var subjectLabel: UILabel!
     @IBOutlet weak var pageControl: UIPageControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupSpaceScene()
+    }
+    
+    fileprivate func setupSpaceScene() {
+        if let view = self.view as? SKView {
+            let scene = SpaceScene(size: view.bounds.size)
+            scene.scaleMode = .aspectFill
+            view.presentScene(scene)
+            view.ignoresSiblingOrder = true
+        }
     }
     
     @IBAction func didPressStart(_ sender: Any) {
-        UserDefaults.standard.introCompleted()
+        UserDefaults.standard.introCompleted = true
         dismiss(animated: true)
     }
     

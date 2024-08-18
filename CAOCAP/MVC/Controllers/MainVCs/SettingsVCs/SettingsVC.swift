@@ -42,7 +42,6 @@ struct SettingsOption {
 }
 
 class SettingsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Storyboarded {
-    var coordinator: MainCoordinator?
     
     @IBOutlet weak var tableView: UITableView!
     var sections = [Section]()

@@ -23,5 +23,5 @@ protocol Coordinator: AnyObject {
     /// A place to put logic to start the flow.
     func start()
     
-    init(_ navigationController: UINavigationController)
+    init()
 }

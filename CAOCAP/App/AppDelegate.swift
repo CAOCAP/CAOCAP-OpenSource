@@ -15,8 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UserDefaults.standard.addCommit() // TODO: this should be called when the user makes some changes to a project
         RealmRepository.shared.configuration()
-//        FirebaseRepository.shared.configuration()
-        KeyboardManager.shared.configuration()
+        FirebaseRepository.shared.configuration()
+        let _ = KeyboardManager.shared
         
         return true
     }

@@ -28,8 +28,8 @@
 import Foundation
 
 struct AppConstants {
-    static let bodyID = "_body_"
     
+    static let bodyID = "_body_"
     static let html = #"""
 <!DOCTYPE html>
 <html lang="en">
@@ -40,7 +40,8 @@ struct AppConstants {
         <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
         <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
         <script src="https://unpkg.com/redux@4.2.1/dist/redux.js"></script>
-        <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+        <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
     </head>
     <body id="\#(bodyID)"></body>
 </html>

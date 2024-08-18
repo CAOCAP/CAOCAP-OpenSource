@@ -20,25 +20,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         //MARK: Coordinator Setup
-        let navController = UINavigationController()
-        coordinator = MainCoordinator(navController)
-        coordinator?.start()
+        coordinator = MainCoordinator.shared
+        if let coordinator = coordinator { coordinator.start() }
         
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = navController
+        window?.rootViewController = MainCoordinator.shared.navigationController
         window?.makeKeyAndVisible()
         
 //        checkIntroStatus()
     }
     
     fileprivate func checkIntroStatus() {
-        if !UserDefaults.standard.didUserCompleteIntro() {
+        if !UserDefaults.standard.introCompleted {
             let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
             let introVC = storyboard.instantiateViewController(withIdentifier: "IntroVC")
             window?.makeKeyAndVisible()
             window?.rootViewController?.present(introVC, animated: true, completion: nil)
         }
     }
+    
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.

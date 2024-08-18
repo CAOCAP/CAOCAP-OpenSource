@@ -16,6 +16,12 @@ enum Direction: Int {
     case right
 }
 
+enum UILibrary {
+    case both
+    case tailwind(Tailwind)
+    case Daisy(Daisy)
+}
+
 enum TextAlignment: String {
     case textLeft = "text-left"
     case textCenter = "text-center"

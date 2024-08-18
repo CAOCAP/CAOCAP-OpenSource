@@ -15,7 +15,8 @@ class MainSettingsVC: SettingsVC {
 
         sections = [
             Section(title: "Main", options: [
-                /*
+                
+                 /*
                 .staticCell(option: SettingsOption(title: "Language", icon: UIImage(systemName: "globe"), color: .systemPink, label: "English", handler: {
                     print("did press")
                     
@@ -29,8 +30,9 @@ class MainSettingsVC: SettingsVC {
                     
                 })),
                  */
-                .staticCell(option: SettingsOption(title: "What's New?", icon: UIImage(systemName: "sparkles"), color: .systemYellow, label: "v5.0.0", handler: {
-                    self.coordinator?.viewWhatsNewVC()
+                
+                .staticCell(option: SettingsOption(title: "What's New?", icon: UIImage(systemName: "sparkles"), color: .systemYellow, label: "v5.0.2", handler: {
+                    self.coordinator.viewWhatsNewVC()
                     
                 })),
                 .staticCell(option: SettingsOption(title: "Review on AppStore", icon: UIImage(systemName: "star.bubble.fill"), color: .systemBlue, handler: {
@@ -50,39 +52,49 @@ class MainSettingsVC: SettingsVC {
                     self.present(shareSheetVC, animated: true)
                 })),
             ]),
+            
             /*
             Section(title: "contact", options: [
                 .staticCell(option: SettingsOption(title: "Help", icon: UIImage(systemName: "questionmark.circle.fill"), color: .systemTeal, handler: {
-                    self.coordinator?.viewHelp()
+                    guard let coordinator = self.coordinator else { return }
+                    coordinator.viewHelp()
                     
                 })),
                 .staticCell(option: SettingsOption(title: "Support", icon: UIImage(systemName: "message.fill"), color: .systemMint, handler: {
-                    self.coordinator?.viewSupport()
+                    guard let coordinator = self.coordinator else { return }
+                    coordinator.viewSupport()
                     
                 })),
                 .staticCell(option: SettingsOption(title: "Send Feedback", icon: UIImage(systemName: "paperplane.fill"), color: .systemGreen, handler: {
-                    self.coordinator?.viewSendFeedback()
+                    guard let coordinator = self.coordinator else { return }
+                    coordinator.viewSendFeedback()
                     
                 })),
             ]),
-            */
+             
+             */
+            
             Section(title: "Info", options: [
+                
                 /*
                 .staticCell(option:SettingsOption(title: "Privacy Policy", icon: UIImage(systemName: "lock.shield.fill"), color: .systemGray, handler: {
-                    self.coordinator?.viewPrivacyPolicy()
+                    guard let coordinator = self.coordinator else { return }
+                    coordinator.viewPrivacyPolicy()
                     
                 })),
                 .staticCell(option:SettingsOption(title: "Terms Of Use", icon: UIImage(systemName: "doc.on.clipboard.fill"), color: .systemGray, handler: {
-                    self.coordinator?.viewTermsOfUse()
+                    guard let coordinator = self.coordinator else { return }
+                    coordinator.viewTermsOfUse()
                     
                 })),
                  */
+                 
                 .staticCell(option:SettingsOption(title: "About Us", icon: UIImage(systemName: "info.circle.fill"), color: .systemGray2, handler: {
-                    self.coordinator?.viewAboutUs()
+                    self.coordinator.viewAboutUs()
                     
                 })),
                 .staticCell(option: SettingsOption(title: "Credits", icon: UIImage(systemName: "person.2.fill"), color: .systemGray3, handler: {
-                    self.coordinator?.viewCredits()
+                    self.coordinator.viewCredits()
                     
                 })),
             ]),
